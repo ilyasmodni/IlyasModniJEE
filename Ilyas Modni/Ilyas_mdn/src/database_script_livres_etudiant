@@ -1,0 +1,25 @@
+
+-- Ce scripte à executer pour créer la base de données et la table book (ou créer manuellement) et etudiants
+-- Les information sur l'accès de la base des données (voir le fichier web.xml)
+
+
+CREATE DATABASE 'Bookstore';
+USE Bookstore;
+ 
+CREATE TABLE `book` (
+  `book_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(128) NOT NULL,
+  `author` varchar(45) NOT NULL,
+  `price` float NOT NULL,
+  PRIMARY KEY (`book_id`),
+  UNIQUE KEY `book_id_UNIQUE` (`book_id`),
+  UNIQUE KEY `title_UNIQUE` (`title`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1
+
+CREATE TABLE `etudiant` (
+ `idEtudiant` int NOT NULL AUTO_INCREMENT,
+ `Nom` varchar(45) DEFAULT NULL,
+ `prenom` varchar(45) DEFAULT NULL,
+ `Age` int DEFAULT NULL,
+ PRIMARY KEY (`idEtudiant`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
